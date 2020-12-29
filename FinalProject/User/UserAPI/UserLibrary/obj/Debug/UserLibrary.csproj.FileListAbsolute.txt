@@ -1,0 +1,14 @@
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\UserLibrary.dll.config
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\UserLibrary.dll
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\UserLibrary.pdb
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\EntityFramework.dll
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\EntityFramework.xml
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\obj\Debug\UserLibrary.csprojAssemblyReference.cache
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\obj\Debug\UserLibrary.csproj.CoreCompileInputs.cache
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\obj\Debug\UserLibrary.csproj.CopyComplete
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\obj\Debug\UserLibrary.dll
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\obj\Debug\UserLibrary.pdb
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kccistc\source\repos\UserAPI\UserLibrary\bin\Debug\Newtonsoft.Json.xml

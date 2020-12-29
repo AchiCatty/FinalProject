@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAPI", "UserAPI\UserAPI.csproj", "{EA9B1807-0729-4883-BD57-5A3498A4505B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserForm", "UserForm\UserForm.csproj", "{EB3B85AE-E610-4C40-A658-BA8F666C2545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserLibrary", "UserLibrary\UserLibrary.csproj", "{6444005C-3F75-490D-96E7-999BB4EAA8E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA9B1807-0729-4883-BD57-5A3498A4505B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA9B1807-0729-4883-BD57-5A3498A4505B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA9B1807-0729-4883-BD57-5A3498A4505B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA9B1807-0729-4883-BD57-5A3498A4505B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3B85AE-E610-4C40-A658-BA8F666C2545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3B85AE-E610-4C40-A658-BA8F666C2545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3B85AE-E610-4C40-A658-BA8F666C2545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3B85AE-E610-4C40-A658-BA8F666C2545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6444005C-3F75-490D-96E7-999BB4EAA8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6444005C-3F75-490D-96E7-999BB4EAA8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6444005C-3F75-490D-96E7-999BB4EAA8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6444005C-3F75-490D-96E7-999BB4EAA8E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18F06A86-F799-4EC4-9C0D-93D098676D38}
+	EndGlobalSection
+EndGlobal

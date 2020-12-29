@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e1019e0e4a44b6084fea0f4afb84ee0" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AccountingSubject" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AccountType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Customer" Width="1.5" PointX="8" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerType" Width="1.5" PointX="5.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Facility" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FakeAccountInfo" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Fare" Width="1.5" PointX="8" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Purchase" Width="1.5" PointX="10.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PurchaseItem" Width="1.5" PointX="12.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reciept" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Region" Width="1.5" PointX="5.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Storage" Width="1.5" PointX="10.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StorageSize" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StorageType" Width="1.5" PointX="5.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Transaction" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TransactionType" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Account_Account_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Transaction_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Transaction_Accounting_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Customer_Customer_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Customer_Purchase_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Facility_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Facility_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Storage_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Fare_StorageSize" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Fare_StorageType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Storage_Fare" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Product_Customer_Purchase1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Product_Storage" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Transaction_Transaction_Types" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

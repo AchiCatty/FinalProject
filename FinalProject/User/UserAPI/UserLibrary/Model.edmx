@@ -1,0 +1,1089 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="AccountsName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AccountDetail" Type="nvarchar(max)" />
+          <Property Name="AccountTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountingSubject">
+          <Key>
+            <PropertyRef Name="AccountingSubjectId" />
+          </Key>
+          <Property Name="AccountingSubjectId" Type="int" Nullable="false" />
+          <Property Name="AccountingSubjectDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountTypes">
+          <Key>
+            <PropertyRef Name="AccountTypeId" />
+          </Key>
+          <Property Name="AccountTypeId" Type="int" Nullable="false" />
+          <Property Name="AccountTypesDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CustomerPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerEmail" Type="nvarchar(max)" />
+          <Property Name="RegistrationDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LoginId" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OtherDetails" Type="nvarchar(max)" />
+          <Property Name="CustomerTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeId" />
+          </Key>
+          <Property Name="CustomerTypeId" Type="int" Nullable="false" />
+          <Property Name="CustomerTypeDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facility">
+          <Key>
+            <PropertyRef Name="FacilityId" />
+          </Key>
+          <Property Name="FacilityId" Type="int" Nullable="false" />
+          <Property Name="FacilitySpecDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FakeAccountInfo">
+          <Key>
+            <PropertyRef Name="InfoId" />
+          </Key>
+          <Property Name="InfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Sales" Type="int" Nullable="false" />
+          <Property Name="OtherRevenues" Type="int" Nullable="false" />
+          <Property Name="SalesReturns" Type="int" Nullable="false" />
+          <Property Name="GrossProfit" Type="int" Nullable="false" />
+          <Property Name="Wages" Type="int" Nullable="false" />
+          <Property Name="Depreciation" Type="int" Nullable="false" />
+          <Property Name="Rent" Type="int" Nullable="false" />
+          <Property Name="OtherSupplies" Type="int" Nullable="false" />
+          <Property Name="Utilities" Type="int" Nullable="false" />
+          <Property Name="Insurance" Type="int" Nullable="false" />
+          <Property Name="Maintenance" Type="int" Nullable="false" />
+          <Property Name="Advertising" Type="int" Nullable="false" />
+          <Property Name="OtherExpenses" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fare">
+          <Key>
+            <PropertyRef Name="FareId" />
+          </Key>
+          <Property Name="FareId" Type="int" Nullable="false" />
+          <Property Name="StorageTypeId" Type="int" Nullable="false" />
+          <Property Name="FarePerMinute" Type="int" Nullable="false" />
+          <Property Name="StorageSizeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Purchase">
+          <Key>
+            <PropertyRef Name="PurchaseId" />
+          </Key>
+          <Property Name="PurchaseId" Type="int" Nullable="false" />
+          <Property Name="PurchaseTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="OtherDetails" Type="nvarchar(max)" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="PurchaseAmount" Type="int" Nullable="false" />
+          <Property Name="TransactionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchaseItem">
+          <Key>
+            <PropertyRef Name="PurchaseItemId" />
+          </Key>
+          <Property Name="PurchaseItemId" Type="int" Nullable="false" />
+          <Property Name="InTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="OutTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="StorageId" Type="int" Nullable="false" />
+          <Property Name="PurchaseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reciept">
+          <Key>
+            <PropertyRef Name="RecieptId" />
+          </Key>
+          <Property Name="RecieptId" Type="int" Nullable="false" />
+          <Property Name="TransactionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="District" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Town" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="Longitude" Type="decimal" Precision="10" Scale="5" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="StorageId" />
+          </Key>
+          <Property Name="StorageId" Type="int" Nullable="false" />
+          <Property Name="FacilityId" Type="int" Nullable="false" />
+          <Property Name="Activated" Type="bit" Nullable="false" />
+          <Property Name="FareId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StorageSize">
+          <Key>
+            <PropertyRef Name="StorageSizeId" />
+          </Key>
+          <Property Name="StorageSizeId" Type="int" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StorageType">
+          <Key>
+            <PropertyRef Name="StorageTypeId" />
+          </Key>
+          <Property Name="StorageTypeId" Type="int" Nullable="false" />
+          <Property Name="StorageTypeName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="AmountofTransaction" Type="int" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="TransactionTypeId" Type="int" Nullable="false" />
+          <Property Name="AccountingSubjectId" Type="int" Nullable="false" />
+          <Property Name="OtherDetails" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TransactionTypes">
+          <Key>
+            <PropertyRef Name="TransactionTypesId" />
+          </Key>
+          <Property Name="TransactionTypesId" Type="int" Nullable="false" />
+          <Property Name="TransactionTypesDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Account_Account_Types">
+          <End Role="AccountTypes" Type="Self.AccountTypes" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountTypes">
+              <PropertyRef Name="AccountTypeId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="AccountTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer_Type">
+          <End Role="CustomerType" Type="Self.CustomerType" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerType">
+              <PropertyRef Name="CustomerTypeId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CustomerTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Purchase_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Purchase">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facility_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Facility" Type="Self.Facility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Facility">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facility_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Facility" Type="Self.Facility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionId" />
+            </Principal>
+            <Dependent Role="Facility">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fare_StorageSize">
+          <End Role="StorageSize" Type="Self.StorageSize" Multiplicity="1" />
+          <End Role="Fare" Type="Self.Fare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageSize">
+              <PropertyRef Name="StorageSizeId" />
+            </Principal>
+            <Dependent Role="Fare">
+              <PropertyRef Name="StorageSizeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fare_StorageType">
+          <End Role="StorageType" Type="Self.StorageType" Multiplicity="1" />
+          <End Role="Fare" Type="Self.Fare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageType">
+              <PropertyRef Name="StorageTypeId" />
+            </Principal>
+            <Dependent Role="Fare">
+              <PropertyRef Name="StorageTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Customer_Purchase1">
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="1" />
+          <End Role="PurchaseItem" Type="Self.PurchaseItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchase">
+              <PropertyRef Name="PurchaseId" />
+            </Principal>
+            <Dependent Role="PurchaseItem">
+              <PropertyRef Name="PurchaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Storage">
+          <End Role="Storage" Type="Self.Storage" Multiplicity="1" />
+          <End Role="PurchaseItem" Type="Self.PurchaseItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Storage">
+              <PropertyRef Name="StorageId" />
+            </Principal>
+            <Dependent Role="PurchaseItem">
+              <PropertyRef Name="StorageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Storage_Facility">
+          <End Role="Facility" Type="Self.Facility" Multiplicity="1" />
+          <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facility">
+              <PropertyRef Name="FacilityId" />
+            </Principal>
+            <Dependent Role="Storage">
+              <PropertyRef Name="FacilityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Storage_Fare">
+          <End Role="Fare" Type="Self.Fare" Multiplicity="1" />
+          <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fare">
+              <PropertyRef Name="FareId" />
+            </Principal>
+            <Dependent Role="Storage">
+              <PropertyRef Name="FareId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Accounting_Subject">
+          <End Role="AccountingSubject" Type="Self.AccountingSubject" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountingSubject">
+              <PropertyRef Name="AccountingSubjectId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="AccountingSubjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Transaction_Types">
+          <End Role="TransactionTypes" Type="Self.TransactionTypes" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionTypes">
+              <PropertyRef Name="TransactionTypesId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="TransactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountingSubject" EntityType="Self.AccountingSubject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountTypes" EntityType="Self.AccountTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerType" EntityType="Self.CustomerType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FakeAccountInfo" EntityType="Self.FakeAccountInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fare" EntityType="Self.Fare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchase" EntityType="Self.Purchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseItem" EntityType="Self.PurchaseItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reciept" EntityType="Self.Reciept" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StorageSize" EntityType="Self.StorageSize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StorageType" EntityType="Self.StorageType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionTypes" EntityType="Self.TransactionTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Account_Account_Types" Association="Self.FK_Account_Account_Types">
+            <End Role="AccountTypes" EntitySet="AccountTypes" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer_Type" Association="Self.FK_Customer_Customer_Type">
+            <End Role="CustomerType" EntitySet="CustomerType" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Purchase_Customer" Association="Self.FK_Customer_Purchase_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Purchase" EntitySet="Purchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facility_Employee" Association="Self.FK_Facility_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Facility" EntitySet="Facility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facility_Region" Association="Self.FK_Facility_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Facility" EntitySet="Facility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fare_StorageSize" Association="Self.FK_Fare_StorageSize">
+            <End Role="StorageSize" EntitySet="StorageSize" />
+            <End Role="Fare" EntitySet="Fare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fare_StorageType" Association="Self.FK_Fare_StorageType">
+            <End Role="StorageType" EntitySet="StorageType" />
+            <End Role="Fare" EntitySet="Fare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Customer_Purchase1" Association="Self.FK_Product_Customer_Purchase1">
+            <End Role="Purchase" EntitySet="Purchase" />
+            <End Role="PurchaseItem" EntitySet="PurchaseItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Storage" Association="Self.FK_Product_Storage">
+            <End Role="Storage" EntitySet="Storage" />
+            <End Role="PurchaseItem" EntitySet="PurchaseItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Storage_Facility" Association="Self.FK_Storage_Facility">
+            <End Role="Facility" EntitySet="Facility" />
+            <End Role="Storage" EntitySet="Storage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Storage_Fare" Association="Self.FK_Storage_Fare">
+            <End Role="Fare" EntitySet="Fare" />
+            <End Role="Storage" EntitySet="Storage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Account" Association="Self.FK_Transaction_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Accounting_Subject" Association="Self.FK_Transaction_Accounting_Subject">
+            <End Role="AccountingSubject" EntitySet="AccountingSubject" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Transaction_Types" Association="Self.FK_Transaction_Transaction_Types">
+            <End Role="TransactionTypes" EntitySet="TransactionTypes" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="AccountsName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccountDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AccountTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AccountType" Relationship="Self.FK_Account_Account_Types" FromRole="Account" ToRole="AccountTypes" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transaction_Account" FromRole="Account" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="AccountingSubject">
+          <Key>
+            <PropertyRef Name="AccountingSubjectId" />
+          </Key>
+          <Property Name="AccountingSubjectId" Type="Int32" Nullable="false" />
+          <Property Name="AccountingSubjectDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transaction_Accounting_Subject" FromRole="AccountingSubject" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="AccountTypeId" />
+          </Key>
+          <Property Name="AccountTypeId" Type="Int32" Nullable="false" />
+          <Property Name="AccountTypesDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_Account_Types" FromRole="AccountTypes" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LoginId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OtherDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerType" Relationship="Self.FK_Customer_Customer_Type" FromRole="Customer" ToRole="CustomerType" />
+          <NavigationProperty Name="Purchases" Relationship="Self.FK_Customer_Purchase_Customer" FromRole="Customer" ToRole="Purchase" />
+        </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeId" />
+          </Key>
+          <Property Name="CustomerTypeId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerTypeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Customer_Type" FromRole="CustomerType" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Facilities" Relationship="Self.FK_Facility_Employee" FromRole="Employee" ToRole="Facility" />
+        </EntityType>
+        <EntityType Name="Facility">
+          <Key>
+            <PropertyRef Name="FacilityId" />
+          </Key>
+          <Property Name="FacilityId" Type="Int32" Nullable="false" />
+          <Property Name="FacilitySpecDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Facility_Employee" FromRole="Facility" ToRole="Employee" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_Facility_Region" FromRole="Facility" ToRole="Region" />
+          <NavigationProperty Name="Storages" Relationship="Self.FK_Storage_Facility" FromRole="Facility" ToRole="Storage" />
+        </EntityType>
+        <EntityType Name="FakeAccountInfo">
+          <Key>
+            <PropertyRef Name="InfoId" />
+          </Key>
+          <Property Name="InfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Sales" Type="Int32" Nullable="false" />
+          <Property Name="OtherRevenues" Type="Int32" Nullable="false" />
+          <Property Name="SalesReturns" Type="Int32" Nullable="false" />
+          <Property Name="GrossProfit" Type="Int32" Nullable="false" />
+          <Property Name="Wages" Type="Int32" Nullable="false" />
+          <Property Name="Depreciation" Type="Int32" Nullable="false" />
+          <Property Name="Rent" Type="Int32" Nullable="false" />
+          <Property Name="OtherSupplies" Type="Int32" Nullable="false" />
+          <Property Name="Utilities" Type="Int32" Nullable="false" />
+          <Property Name="Insurance" Type="Int32" Nullable="false" />
+          <Property Name="Maintenance" Type="Int32" Nullable="false" />
+          <Property Name="Advertising" Type="Int32" Nullable="false" />
+          <Property Name="OtherExpenses" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fare">
+          <Key>
+            <PropertyRef Name="FareId" />
+          </Key>
+          <Property Name="FareId" Type="Int32" Nullable="false" />
+          <Property Name="StorageTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FarePerMinute" Type="Int32" Nullable="false" />
+          <Property Name="StorageSizeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StorageSize" Relationship="Self.FK_Fare_StorageSize" FromRole="Fare" ToRole="StorageSize" />
+          <NavigationProperty Name="StorageType" Relationship="Self.FK_Fare_StorageType" FromRole="Fare" ToRole="StorageType" />
+          <NavigationProperty Name="Storages" Relationship="Self.FK_Storage_Fare" FromRole="Fare" ToRole="Storage" />
+        </EntityType>
+        <EntityType Name="Purchase">
+          <Key>
+            <PropertyRef Name="PurchaseId" />
+          </Key>
+          <Property Name="PurchaseId" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="OtherDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseAmount" Type="Int32" Nullable="false" />
+          <Property Name="TransactionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_Purchase_Customer" FromRole="Purchase" ToRole="Customer" />
+          <NavigationProperty Name="PurchaseItems" Relationship="Self.FK_Product_Customer_Purchase1" FromRole="Purchase" ToRole="PurchaseItem" />
+        </EntityType>
+        <EntityType Name="PurchaseItem">
+          <Key>
+            <PropertyRef Name="PurchaseItemId" />
+          </Key>
+          <Property Name="PurchaseItemId" Type="Int32" Nullable="false" />
+          <Property Name="InTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OutTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StorageId" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Purchase" Relationship="Self.FK_Product_Customer_Purchase1" FromRole="PurchaseItem" ToRole="Purchase" />
+          <NavigationProperty Name="Storage" Relationship="Self.FK_Product_Storage" FromRole="PurchaseItem" ToRole="Storage" />
+        </EntityType>
+        <EntityType Name="Reciept">
+          <Key>
+            <PropertyRef Name="RecieptId" />
+          </Key>
+          <Property Name="RecieptId" Type="Int32" Nullable="false" />
+          <Property Name="TransactionId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="District" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="Longitude" Type="Decimal" Precision="10" Scale="5" />
+          <NavigationProperty Name="Facilities" Relationship="Self.FK_Facility_Region" FromRole="Region" ToRole="Facility" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="StorageId" />
+          </Key>
+          <Property Name="StorageId" Type="Int32" Nullable="false" />
+          <Property Name="FacilityId" Type="Int32" Nullable="false" />
+          <Property Name="Activated" Type="Boolean" Nullable="false" />
+          <Property Name="FareId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_Storage_Facility" FromRole="Storage" ToRole="Facility" />
+          <NavigationProperty Name="Fare" Relationship="Self.FK_Storage_Fare" FromRole="Storage" ToRole="Fare" />
+          <NavigationProperty Name="PurchaseItems" Relationship="Self.FK_Product_Storage" FromRole="Storage" ToRole="PurchaseItem" />
+        </EntityType>
+        <EntityType Name="StorageSize">
+          <Key>
+            <PropertyRef Name="StorageSizeId" />
+          </Key>
+          <Property Name="StorageSizeId" Type="Int32" Nullable="false" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fares" Relationship="Self.FK_Fare_StorageSize" FromRole="StorageSize" ToRole="Fare" />
+        </EntityType>
+        <EntityType Name="StorageType">
+          <Key>
+            <PropertyRef Name="StorageTypeId" />
+          </Key>
+          <Property Name="StorageTypeId" Type="Int32" Nullable="false" />
+          <Property Name="StorageTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fares" Relationship="Self.FK_Fare_StorageType" FromRole="StorageType" ToRole="Fare" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="AmountofTransaction" Type="Int32" Nullable="false" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="TransactionTypeId" Type="Int32" Nullable="false" />
+          <Property Name="AccountingSubjectId" Type="Int32" Nullable="false" />
+          <Property Name="OtherDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_Transaction_Account" FromRole="Transaction" ToRole="Account" />
+          <NavigationProperty Name="AccountingSubject" Relationship="Self.FK_Transaction_Accounting_Subject" FromRole="Transaction" ToRole="AccountingSubject" />
+          <NavigationProperty Name="TransactionType" Relationship="Self.FK_Transaction_Transaction_Types" FromRole="Transaction" ToRole="TransactionTypes" />
+        </EntityType>
+        <EntityType Name="TransactionType">
+          <Key>
+            <PropertyRef Name="TransactionTypesId" />
+          </Key>
+          <Property Name="TransactionTypesId" Type="Int32" Nullable="false" />
+          <Property Name="TransactionTypesDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transaction_Transaction_Types" FromRole="TransactionTypes" ToRole="Transaction" />
+        </EntityType>
+        <Association Name="FK_Account_Account_Types">
+          <End Role="AccountTypes" Type="Self.AccountType" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountTypes">
+              <PropertyRef Name="AccountTypeId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="AccountTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Accounting_Subject">
+          <End Role="AccountingSubject" Type="Self.AccountingSubject" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountingSubject">
+              <PropertyRef Name="AccountingSubjectId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="AccountingSubjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer_Type">
+          <End Role="CustomerType" Type="Self.CustomerType" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerType">
+              <PropertyRef Name="CustomerTypeId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CustomerTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Purchase_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Purchase">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facility_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Facility" Type="Self.Facility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Facility">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facility_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Facility" Type="Self.Facility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionId" />
+            </Principal>
+            <Dependent Role="Facility">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Storage_Facility">
+          <End Role="Facility" Type="Self.Facility" Multiplicity="1" />
+          <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facility">
+              <PropertyRef Name="FacilityId" />
+            </Principal>
+            <Dependent Role="Storage">
+              <PropertyRef Name="FacilityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fare_StorageSize">
+          <End Role="StorageSize" Type="Self.StorageSize" Multiplicity="1" />
+          <End Role="Fare" Type="Self.Fare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageSize">
+              <PropertyRef Name="StorageSizeId" />
+            </Principal>
+            <Dependent Role="Fare">
+              <PropertyRef Name="StorageSizeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fare_StorageType">
+          <End Role="StorageType" Type="Self.StorageType" Multiplicity="1" />
+          <End Role="Fare" Type="Self.Fare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageType">
+              <PropertyRef Name="StorageTypeId" />
+            </Principal>
+            <Dependent Role="Fare">
+              <PropertyRef Name="StorageTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Storage_Fare">
+          <End Role="Fare" Type="Self.Fare" Multiplicity="1" />
+          <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fare">
+              <PropertyRef Name="FareId" />
+            </Principal>
+            <Dependent Role="Storage">
+              <PropertyRef Name="FareId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Customer_Purchase1">
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="1" />
+          <End Role="PurchaseItem" Type="Self.PurchaseItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchase">
+              <PropertyRef Name="PurchaseId" />
+            </Principal>
+            <Dependent Role="PurchaseItem">
+              <PropertyRef Name="PurchaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Storage">
+          <End Role="Storage" Type="Self.Storage" Multiplicity="1" />
+          <End Role="PurchaseItem" Type="Self.PurchaseItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Storage">
+              <PropertyRef Name="StorageId" />
+            </Principal>
+            <Dependent Role="PurchaseItem">
+              <PropertyRef Name="StorageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Transaction_Types">
+          <End Role="TransactionTypes" Type="Self.TransactionType" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionTypes">
+              <PropertyRef Name="TransactionTypesId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="TransactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="분산컴퓨팅_기반_스마트_보관함_관리시스템Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="AccountingSubjects" EntityType="Self.AccountingSubject" />
+          <EntitySet Name="AccountTypes" EntityType="Self.AccountType" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerTypes" EntityType="Self.CustomerType" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Facilities" EntityType="Self.Facility" />
+          <EntitySet Name="FakeAccountInfoes" EntityType="Self.FakeAccountInfo" />
+          <EntitySet Name="Fares" EntityType="Self.Fare" />
+          <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+          <EntitySet Name="PurchaseItems" EntityType="Self.PurchaseItem" />
+          <EntitySet Name="Reciepts" EntityType="Self.Reciept" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Storages" EntityType="Self.Storage" />
+          <EntitySet Name="StorageSizes" EntityType="Self.StorageSize" />
+          <EntitySet Name="StorageTypes" EntityType="Self.StorageType" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="TransactionTypes" EntityType="Self.TransactionType" />
+          <AssociationSet Name="FK_Account_Account_Types" Association="Self.FK_Account_Account_Types">
+            <End Role="AccountTypes" EntitySet="AccountTypes" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Account" Association="Self.FK_Transaction_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Accounting_Subject" Association="Self.FK_Transaction_Accounting_Subject">
+            <End Role="AccountingSubject" EntitySet="AccountingSubjects" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer_Type" Association="Self.FK_Customer_Customer_Type">
+            <End Role="CustomerType" EntitySet="CustomerTypes" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Purchase_Customer" Association="Self.FK_Customer_Purchase_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Purchase" EntitySet="Purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facility_Employee" Association="Self.FK_Facility_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Facility" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facility_Region" Association="Self.FK_Facility_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Facility" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Storage_Facility" Association="Self.FK_Storage_Facility">
+            <End Role="Facility" EntitySet="Facilities" />
+            <End Role="Storage" EntitySet="Storages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fare_StorageSize" Association="Self.FK_Fare_StorageSize">
+            <End Role="StorageSize" EntitySet="StorageSizes" />
+            <End Role="Fare" EntitySet="Fares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fare_StorageType" Association="Self.FK_Fare_StorageType">
+            <End Role="StorageType" EntitySet="StorageTypes" />
+            <End Role="Fare" EntitySet="Fares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Storage_Fare" Association="Self.FK_Storage_Fare">
+            <End Role="Fare" EntitySet="Fares" />
+            <End Role="Storage" EntitySet="Storages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Customer_Purchase1" Association="Self.FK_Product_Customer_Purchase1">
+            <End Role="Purchase" EntitySet="Purchases" />
+            <End Role="PurchaseItem" EntitySet="PurchaseItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Storage" Association="Self.FK_Product_Storage">
+            <End Role="Storage" EntitySet="Storages" />
+            <End Role="PurchaseItem" EntitySet="PurchaseItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Transaction_Types" Association="Self.FK_Transaction_Transaction_Types">
+            <End Role="TransactionTypes" EntitySet="TransactionTypes" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="분산컴퓨팅_기반_스마트_보관함_관리시스템Entities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="Model.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="AccountsName" ColumnName="AccountsName" />
+                <ScalarProperty Name="AccountDetail" ColumnName="AccountDetail" />
+                <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountingSubjects">
+            <EntityTypeMapping TypeName="Model.AccountingSubject">
+              <MappingFragment StoreEntitySet="AccountingSubject">
+                <ScalarProperty Name="AccountingSubjectId" ColumnName="AccountingSubjectId" />
+                <ScalarProperty Name="AccountingSubjectDescription" ColumnName="AccountingSubjectDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountTypes">
+            <EntityTypeMapping TypeName="Model.AccountType">
+              <MappingFragment StoreEntitySet="AccountTypes">
+                <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+                <ScalarProperty Name="AccountTypesDescription" ColumnName="AccountTypesDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Model.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="OtherDetails" ColumnName="OtherDetails" />
+                <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerTypes">
+            <EntityTypeMapping TypeName="Model.CustomerType">
+              <MappingFragment StoreEntitySet="CustomerType">
+                <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
+                <ScalarProperty Name="CustomerTypeDescription" ColumnName="CustomerTypeDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facilities">
+            <EntityTypeMapping TypeName="Model.Facility">
+              <MappingFragment StoreEntitySet="Facility">
+                <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+                <ScalarProperty Name="FacilitySpecDescription" ColumnName="FacilitySpecDescription" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FakeAccountInfoes">
+            <EntityTypeMapping TypeName="Model.FakeAccountInfo">
+              <MappingFragment StoreEntitySet="FakeAccountInfo">
+                <ScalarProperty Name="InfoId" ColumnName="InfoId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Sales" ColumnName="Sales" />
+                <ScalarProperty Name="OtherRevenues" ColumnName="OtherRevenues" />
+                <ScalarProperty Name="SalesReturns" ColumnName="SalesReturns" />
+                <ScalarProperty Name="GrossProfit" ColumnName="GrossProfit" />
+                <ScalarProperty Name="Wages" ColumnName="Wages" />
+                <ScalarProperty Name="Depreciation" ColumnName="Depreciation" />
+                <ScalarProperty Name="Rent" ColumnName="Rent" />
+                <ScalarProperty Name="OtherSupplies" ColumnName="OtherSupplies" />
+                <ScalarProperty Name="Utilities" ColumnName="Utilities" />
+                <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+                <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+                <ScalarProperty Name="Advertising" ColumnName="Advertising" />
+                <ScalarProperty Name="OtherExpenses" ColumnName="OtherExpenses" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fares">
+            <EntityTypeMapping TypeName="Model.Fare">
+              <MappingFragment StoreEntitySet="Fare">
+                <ScalarProperty Name="FareId" ColumnName="FareId" />
+                <ScalarProperty Name="StorageTypeId" ColumnName="StorageTypeId" />
+                <ScalarProperty Name="FarePerMinute" ColumnName="FarePerMinute" />
+                <ScalarProperty Name="StorageSizeId" ColumnName="StorageSizeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchases">
+            <EntityTypeMapping TypeName="Model.Purchase">
+              <MappingFragment StoreEntitySet="Purchase">
+                <ScalarProperty Name="PurchaseId" ColumnName="PurchaseId" />
+                <ScalarProperty Name="PurchaseTime" ColumnName="PurchaseTime" />
+                <ScalarProperty Name="OtherDetails" ColumnName="OtherDetails" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="PurchaseAmount" ColumnName="PurchaseAmount" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseItems">
+            <EntityTypeMapping TypeName="Model.PurchaseItem">
+              <MappingFragment StoreEntitySet="PurchaseItem">
+                <ScalarProperty Name="PurchaseItemId" ColumnName="PurchaseItemId" />
+                <ScalarProperty Name="InTime" ColumnName="InTime" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="StorageId" ColumnName="StorageId" />
+                <ScalarProperty Name="PurchaseId" ColumnName="PurchaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reciepts">
+            <EntityTypeMapping TypeName="Model.Reciept">
+              <MappingFragment StoreEntitySet="Reciept">
+                <ScalarProperty Name="RecieptId" ColumnName="RecieptId" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="Model.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Storages">
+            <EntityTypeMapping TypeName="Model.Storage">
+              <MappingFragment StoreEntitySet="Storage">
+                <ScalarProperty Name="StorageId" ColumnName="StorageId" />
+                <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="FareId" ColumnName="FareId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StorageSizes">
+            <EntityTypeMapping TypeName="Model.StorageSize">
+              <MappingFragment StoreEntitySet="StorageSize">
+                <ScalarProperty Name="StorageSizeId" ColumnName="StorageSizeId" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StorageTypes">
+            <EntityTypeMapping TypeName="Model.StorageType">
+              <MappingFragment StoreEntitySet="StorageType">
+                <ScalarProperty Name="StorageTypeId" ColumnName="StorageTypeId" />
+                <ScalarProperty Name="StorageTypeName" ColumnName="StorageTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="Model.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="AmountofTransaction" ColumnName="AmountofTransaction" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="TransactionTypeId" ColumnName="TransactionTypeId" />
+                <ScalarProperty Name="AccountingSubjectId" ColumnName="AccountingSubjectId" />
+                <ScalarProperty Name="OtherDetails" ColumnName="OtherDetails" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionTypes">
+            <EntityTypeMapping TypeName="Model.TransactionType">
+              <MappingFragment StoreEntitySet="TransactionTypes">
+                <ScalarProperty Name="TransactionTypesId" ColumnName="TransactionTypesId" />
+                <ScalarProperty Name="TransactionTypesDescription" ColumnName="TransactionTypesDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
