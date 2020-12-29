@@ -68,10 +68,11 @@ namespace UserForm
                 {
                     CheckId = 1;
                     CustomerId = item.CustomerId;
-                }
-                else if(item.Password == tePwd.Text)
-                {
-                    CheckPwd = 1;
+                    
+                    if (item.Password == tePwd.Text)
+                    {
+                        CheckPwd = 1;
+                    }
                 }
             }
 

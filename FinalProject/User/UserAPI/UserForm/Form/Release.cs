@@ -15,6 +15,7 @@ namespace UserForm
     public partial class Release : Form
     {
         int MemberId;
+        int FacilityNum = 15;
         public Release(int memberId)
         {
             InitializeComponent();
@@ -25,8 +26,8 @@ namespace UserForm
         {
             base.OnLoad(e);
             CreateLabelList();
-            ConvertRedBox(15);
-            CheckCustomerBox(15);
+            ConvertRedBox(FacilityNum);
+            CheckCustomerBox(FacilityNum);
         }
 
         private void ConvertRedBox(int facilityId)
@@ -118,26 +119,30 @@ namespace UserForm
                 labelBox.BackColor = Color.Yellow;
                 labelBox.Tag = 1;
             }
-            else if (labelBox.BackColor == Color.Gray)
-            {
-                labelBox.BackColor = Color.Yellow;
-                labelBox.Tag = 2;
-            }
             // 노란건 이미 선택된거기 때문에 다시 하얀색으로
             else if (labelBox.BackColor == Color.Yellow)
             {
-                if (Convert.ToInt32(labelBox.Tag) == 1)
-                {
-                    labelBox.BackColor = Color.White;
-                }
-                else if (Convert.ToInt32(labelBox.Tag) == 2)
-                {
-                    labelBox.BackColor = Color.Gray;
-                }
+                labelBox.BackColor = Color.White;
             }
         }
 
-        
+        List<int> storageNumList = new List<int>();
+
+        private void ReleaseBtn(object sender, EventArgs e)
+        {
+            foreach (var item in _labels)
+            {
+                if(item.BackColor == Color.Yellow)
+                {
+                    storageNumList.Add(Convert.ToInt32(item.Text));
+                }
+            }
+
+            // 고객 아이디와 보관함번호 맞춰서 linq로 찾고 put(update) outTime
+            
+        }
+
+
 
         // ExitBtn - 처음으로 버튼
         //private void ExitBtn(object sender, EventArgs e)
