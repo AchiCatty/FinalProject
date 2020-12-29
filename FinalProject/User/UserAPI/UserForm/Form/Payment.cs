@@ -57,6 +57,8 @@ namespace UserForm
 
         private void btnCardPay_Click(object sender, EventArgs e)
         {
+            // binding 된 data 가져오기
+            // 바인딩 했다는 소리는 수정된 것도 자동으로 가지고 있음
             bdsList.EndEdit();
             List<GridItem> items = (List<GridItem>)bdsList.DataSource;
 
@@ -66,12 +68,24 @@ namespace UserForm
 
             for (int i = 0; i < StorageList.Count; i++)
             {
+                double hour = DateTime.Now.Hour;
+                double min = DateTime.Now.Minute;
+
+                // smalldatetime으로 변환시켜주는거
+                string dt = Convert.ToDateTime(gridView1.GetRowCellValue(i, "InTime")).ToShortDateString();
+                DateTime ndt = (Convert.ToDateTime(dt)).AddHours(hour).AddMinutes(min);
+
                 PurchaseItem purchaseItem = new PurchaseItem
                 {
-                    StorageId = Convert.ToInt32(gridView1.GetRowCellValue(i, "StorageId")),
-                    InTime = Convert.ToDateTime(gridView1.GetRowCellValue(i, "InTime")),
-                    OutTime = Convert.ToDateTime(gridView1.GetRowCellValue(i, "OutTime")),
+                    StorageId = items[i].StorageId,
+                    //StorageId = Convert.ToInt32(gridView1.GetRowCellValue(i, "StorageId")),
+                    InTime = ndt,
+                    //InTime = Convert.ToDateTime(gridView1.GetRowCellValue(i, "InTime")),
+                    //OutTime = Convert.ToDateTime(gridView1.GetRowCellValue(i, "OutTime")),
+                    OutTime = ndt.AddHours(6),
                     PurchaseItemId = (UserClient.PurchaseItemsClient.GetPurchaseItemsAsync().Result.ToList()).Last().PurchaseItemId +i+ 1,
+                    //PurchaseItemId = (UserClient.PurchaseItemsClient.GetPurchaseItemsAsync().Result.ToList()).Last().PurchaseItemId +i+ 1,
+                    //PurchaseId = purchaseIdNum
                     PurchaseId = purchaseIdNum
                 };
                 purchaseItems.Add(purchaseItem);
@@ -92,6 +106,7 @@ namespace UserForm
             purchase.TransactionId = 77;
 
             UserClient.PurchasesClient.PostPurchaseAsync(purchase);
+
         }
     }
 

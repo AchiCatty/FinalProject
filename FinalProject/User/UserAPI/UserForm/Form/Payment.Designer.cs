@@ -38,7 +38,12 @@ namespace UserForm
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
+            this.bdsList = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colStorageId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOutTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -55,15 +60,13 @@ namespace UserForm
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsList = new System.Windows.Forms.BindingSource(this.components);
-            this.colStorageId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colInTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOutTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -81,7 +84,8 @@ namespace UserForm
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -172,10 +176,14 @@ namespace UserForm
             this.gridControl.MainView = this.gridView1;
             this.gridControl.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(760, 267);
+            this.gridControl.Size = new System.Drawing.Size(671, 267);
             this.gridControl.TabIndex = 4;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bdsList
+            // 
+            this.bdsList.DataSource = typeof(UserForm.GridItem);
             // 
             // gridView1
             // 
@@ -188,6 +196,42 @@ namespace UserForm
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            // 
+            // colStorageId
+            // 
+            this.colStorageId.FieldName = "StorageId";
+            this.colStorageId.MinWidth = 25;
+            this.colStorageId.Name = "colStorageId";
+            this.colStorageId.Visible = true;
+            this.colStorageId.VisibleIndex = 0;
+            this.colStorageId.Width = 94;
+            // 
+            // colInTime
+            // 
+            this.colInTime.FieldName = "InTime";
+            this.colInTime.MinWidth = 25;
+            this.colInTime.Name = "colInTime";
+            this.colInTime.Visible = true;
+            this.colInTime.VisibleIndex = 1;
+            this.colInTime.Width = 94;
+            // 
+            // colOutTime
+            // 
+            this.colOutTime.FieldName = "OutTime";
+            this.colOutTime.MinWidth = 25;
+            this.colOutTime.Name = "colOutTime";
+            this.colOutTime.Visible = true;
+            this.colOutTime.VisibleIndex = 2;
+            this.colOutTime.Width = 94;
+            // 
+            // colAmount
+            // 
+            this.colAmount.FieldName = "Amount";
+            this.colAmount.MinWidth = 25;
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Visible = true;
+            this.colAmount.VisibleIndex = 3;
+            this.colAmount.Width = 94;
             // 
             // Root
             // 
@@ -208,7 +252,9 @@ namespace UserForm
             this.emptySpaceItem8,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.emptySpaceItem9,
+            this.emptySpaceItem10});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(784, 559);
             this.Root.TextVisible = false;
@@ -226,7 +272,7 @@ namespace UserForm
             this.layoutControlItem1.Control = this.gridControl;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 184);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(764, 271);
+            this.layoutControlItem1.Size = new System.Drawing.Size(675, 271);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -356,45 +402,27 @@ namespace UserForm
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // bdsList
+            // emptySpaceItem9
             // 
-            this.bdsList.DataSource = typeof(UserForm.GridItem);
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(675, 184);
+            this.emptySpaceItem9.MaxSize = new System.Drawing.Size(89, 0);
+            this.emptySpaceItem9.MinSize = new System.Drawing.Size(89, 10);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(89, 75);
+            this.emptySpaceItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // colStorageId
+            // emptySpaceItem10
             // 
-            this.colStorageId.FieldName = "StorageId";
-            this.colStorageId.MinWidth = 25;
-            this.colStorageId.Name = "colStorageId";
-            this.colStorageId.Visible = true;
-            this.colStorageId.VisibleIndex = 0;
-            this.colStorageId.Width = 94;
-            // 
-            // colInTime
-            // 
-            this.colInTime.FieldName = "InTime";
-            this.colInTime.MinWidth = 25;
-            this.colInTime.Name = "colInTime";
-            this.colInTime.Visible = true;
-            this.colInTime.VisibleIndex = 1;
-            this.colInTime.Width = 94;
-            // 
-            // colOutTime
-            // 
-            this.colOutTime.FieldName = "OutTime";
-            this.colOutTime.MinWidth = 25;
-            this.colOutTime.Name = "colOutTime";
-            this.colOutTime.Visible = true;
-            this.colOutTime.VisibleIndex = 2;
-            this.colOutTime.Width = 94;
-            // 
-            // colAmount
-            // 
-            this.colAmount.FieldName = "Amount";
-            this.colAmount.MinWidth = 25;
-            this.colAmount.Name = "colAmount";
-            this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 3;
-            this.colAmount.Width = 94;
+            this.emptySpaceItem10.AllowHotTrack = false;
+            this.emptySpaceItem10.Location = new System.Drawing.Point(675, 259);
+            this.emptySpaceItem10.MaxSize = new System.Drawing.Size(89, 0);
+            this.emptySpaceItem10.MinSize = new System.Drawing.Size(89, 10);
+            this.emptySpaceItem10.Name = "emptySpaceItem10";
+            this.emptySpaceItem10.Size = new System.Drawing.Size(89, 196);
+            this.emptySpaceItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Payment
             // 
@@ -408,6 +436,7 @@ namespace UserForm
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -425,7 +454,8 @@ namespace UserForm
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,5 +492,7 @@ namespace UserForm
         private DevExpress.XtraGrid.Columns.GridColumn colInTime;
         private DevExpress.XtraGrid.Columns.GridColumn colOutTime;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
     }
 }
