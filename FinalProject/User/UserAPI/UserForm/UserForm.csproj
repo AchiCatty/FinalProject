@@ -61,16 +61,25 @@
   <ItemGroup>
     <Compile Include="Client\UserClient.cs" />
     <Compile Include="Client\UserApiClient.cs" />
-    <Compile Include="InputStorageForm.cs">
+    <Compile Include="Form\InputStorageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InputStorageForm.Designer.cs">
+    <Compile Include="Form\InputStorageForm.Designer.cs">
       <DependentUpon>InputStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="InputStorageForm.resx">
+    <EmbeddedResource Include="Form\InputStorageForm.resx">
       <DependentUpon>InputStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -84,6 +93,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GridItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
