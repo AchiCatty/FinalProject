@@ -30,19 +30,6 @@ namespace UserForm
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.tePwd = new DevExpress.XtraEditors.TextEdit();
-            this.teId = new DevExpress.XtraEditors.TextEdit();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.button32 = new System.Windows.Forms.Button();
@@ -80,9 +67,27 @@ namespace UserForm
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.tePwd = new DevExpress.XtraEditors.TextEdit();
+            this.teId = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tePwd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -93,13 +98,8 @@ namespace UserForm
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -116,135 +116,6 @@ namespace UserForm
             this.layoutControl1.Size = new System.Drawing.Size(800, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(597, 43);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(191, 27);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "회원가입";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(597, 12);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(191, 27);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "로그인";
-            this.simpleButton1.Click += new System.EventHandler(this.LoginBtn);
-            // 
-            // tePwd
-            // 
-            this.tePwd.Location = new System.Drawing.Point(56, 43);
-            this.tePwd.Margin = new System.Windows.Forms.Padding(4);
-            this.tePwd.Name = "tePwd";
-            this.tePwd.Size = new System.Drawing.Size(342, 24);
-            this.tePwd.StyleController = this.layoutControl1;
-            this.tePwd.TabIndex = 5;
-            // 
-            // teId
-            // 
-            this.teId.Location = new System.Drawing.Point(56, 12);
-            this.teId.Margin = new System.Windows.Forms.Padding(4);
-            this.teId.Name = "teId";
-            this.teId.Size = new System.Drawing.Size(342, 24);
-            this.teId.StyleController = this.layoutControl1;
-            this.teId.TabIndex = 4;
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem2,
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.emptySpaceItem3,
-            this.emptySpaceItem1,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.emptySpaceItem4});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 450);
-            this.Root.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(390, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(195, 31);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.teId;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(202, 28);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(390, 31);
-            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem1.Text = "ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(32, 18);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.tePwd;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 31);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(202, 28);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(390, 31);
-            this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem2.Text = "PWD";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(32, 18);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 62);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(780, 16);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(390, 31);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(195, 31);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.simpleButton1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(585, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(195, 31);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.simpleButton2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(585, 31);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(195, 31);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 416);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(780, 14);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tableLayoutPanel1
             // 
@@ -294,6 +165,7 @@ namespace UserForm
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(111, 90);
             this.button32.TabIndex = 4;
+            this.button32.Tag = "1";
             this.button32.Text = "한/영";
             this.button32.UseVisualStyleBackColor = true;
             // 
@@ -305,8 +177,10 @@ namespace UserForm
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(170, 90);
             this.button31.TabIndex = 3;
+            this.button31.Tag = "1";
             this.button31.Text = "완료";
             this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.LoginBtn);
             // 
             // button30
             // 
@@ -316,6 +190,7 @@ namespace UserForm
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(119, 90);
             this.button30.TabIndex = 2;
+            this.button30.Tag = "1";
             this.button30.Text = "?123";
             this.button30.UseVisualStyleBackColor = true;
             // 
@@ -327,6 +202,7 @@ namespace UserForm
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(346, 90);
             this.button29.TabIndex = 1;
+            this.button29.Tag = "1";
             this.button29.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
@@ -390,6 +266,7 @@ namespace UserForm
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(84, 60);
             this.button26.TabIndex = 7;
+            this.button26.Tag = "1";
             this.button26.Text = "back\r\nspace";
             this.button26.UseVisualStyleBackColor = true;
             // 
@@ -434,8 +311,10 @@ namespace UserForm
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(79, 60);
             this.button22.TabIndex = 3;
+            this.button22.Tag = "1";
             this.button22.Text = "CLock";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button21
             // 
@@ -743,6 +622,129 @@ namespace UserForm
             this.button1.Text = "Q";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(597, 43);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(191, 27);
+            this.simpleButton2.StyleController = this.layoutControl1;
+            this.simpleButton2.TabIndex = 7;
+            this.simpleButton2.Tag = "1";
+            this.simpleButton2.Text = "회원가입";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(597, 12);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(191, 27);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.Tag = "1";
+            this.simpleButton1.Text = "로그인";
+            this.simpleButton1.Click += new System.EventHandler(this.LoginBtn);
+            // 
+            // tePwd
+            // 
+            this.tePwd.Location = new System.Drawing.Point(56, 43);
+            this.tePwd.Margin = new System.Windows.Forms.Padding(4);
+            this.tePwd.Name = "tePwd";
+            this.tePwd.Size = new System.Drawing.Size(342, 24);
+            this.tePwd.StyleController = this.layoutControl1;
+            this.tePwd.TabIndex = 5;
+            // 
+            // teId
+            // 
+            this.teId.Location = new System.Drawing.Point(56, 12);
+            this.teId.Margin = new System.Windows.Forms.Padding(4);
+            this.teId.Name = "teId";
+            this.teId.Size = new System.Drawing.Size(342, 24);
+            this.teId.StyleController = this.layoutControl1;
+            this.teId.TabIndex = 4;
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem2,
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.emptySpaceItem3,
+            this.emptySpaceItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.emptySpaceItem4});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(800, 450);
+            this.Root.TextVisible = false;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(390, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(195, 31);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.teId;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(202, 28);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(390, 31);
+            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem1.Text = "ID";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(32, 18);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.tePwd;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 31);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(202, 28);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(390, 31);
+            this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem2.Text = "PWD";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(32, 18);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 62);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(780, 16);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(390, 31);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(195, 31);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.simpleButton1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(585, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(195, 31);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.simpleButton2;
+            this.layoutControlItem4.Location = new System.Drawing.Point(585, 31);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(195, 31);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.tableLayoutPanel1;
@@ -751,6 +753,14 @@ namespace UserForm
             this.layoutControlItem5.Size = new System.Drawing.Size(780, 338);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 416);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(780, 14);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Login
             // 
@@ -762,6 +772,11 @@ namespace UserForm
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tePwd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -772,13 +787,8 @@ namespace UserForm
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
