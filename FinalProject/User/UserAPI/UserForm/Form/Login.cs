@@ -93,7 +93,6 @@ namespace UserForm
                 
                 Selection form = new Selection(memberId, facilityId);
                 form.Show();
-                this.Close();
             }
             else if(CheckId == 1 && CheckPwd == 0)
             {
