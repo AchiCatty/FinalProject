@@ -306,6 +306,15 @@ namespace UserForm
             };
 
             UserClient.CustomersClient.PostCustomerAsync(customer);
+
+            this.Close();
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            //Login login = new Login();
+            //login.Show();
+            this.Close();
         }
     }
 }

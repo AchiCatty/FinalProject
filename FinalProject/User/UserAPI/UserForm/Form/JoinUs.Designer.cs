@@ -805,6 +805,7 @@ namespace UserForm
             this.homeBtn.StyleController = this.layoutControl1;
             this.homeBtn.TabIndex = 5;
             this.homeBtn.Text = "처음으로";
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
             // joinBtn
             // 
