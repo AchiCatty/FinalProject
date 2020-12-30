@@ -87,10 +87,10 @@
     <Compile Include="Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="JoinUs.cs">
+    <Compile Include="Form\JoinUs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JoinUs.Designer.cs">
+    <Compile Include="Form\JoinUs.Designer.cs">
       <DependentUpon>JoinUs.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -119,7 +119,7 @@
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JoinUs.resx">
+    <EmbeddedResource Include="Form\JoinUs.resx">
       <DependentUpon>JoinUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

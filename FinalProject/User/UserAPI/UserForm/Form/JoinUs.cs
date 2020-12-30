@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using MyNamespace;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +16,9 @@ namespace UserForm
 {
     public partial class JoinUs : Form
     {
-        int CheckId = 0;
-        int CheckPwd = 0;
-        int memberId;
         int cursorFlag = 0;
         int keyboardFalg = 0;
-        int facilityId = 15;
+
 
         string[][] key = new string[][]
         {
@@ -60,14 +59,58 @@ namespace UserForm
             }
         }
 
-
-        private void LoginBtn(object sender, EventArgs e)
+        private void check_Click(object sender, EventArgs e)
         {
+            checkId();
+        }
 
+        private void checkId()
+        {
+            if (teId.Text == null)
+            {
+                MessageBox.Show("ID를 입력해주세요");
+                return;
+            }
+
+            var customers = UserClient.CustomersClient.GetCustomersAsync().Result;
+            var customersLoginId = from x in customers
+                                   select x.LoginId;
+
+            foreach (var item in customersLoginId)
+            {
+                if (item == teId.Text)
+                {
+                    MessageBox.Show("중복된 ID입니다");
+                    teId.Text = null;
+                    return;
+                }
+            }
+
+            MessageBox.Show("사용가능한 ID입니다");
         }
 
         private void ClickKeyboard(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+
+            switch (btn.Text)
+            {
+                case "backspace":
+                    RemoveText();
+                    break;
+                case "CLock":
+                    ChangeKey(1);
+                    break;
+                case "한/영":
+                    ChangeKey(2);
+                    break;
+                case "?123":
+                    ChangeKey(3);
+                    break;
+                default:
+                    DoWrite(btn);
+                    break;
+            }
 
         }
 
@@ -76,6 +119,12 @@ namespace UserForm
             TextEdit textEdit = teId;
             if (cursorFlag == 2)
                 textEdit = tePwd;
+            else if (cursorFlag == 3)
+                textEdit = tePwdCheck;
+            else if (cursorFlag == 4)
+                textEdit = teName;
+            else if (cursorFlag == 5)
+                textEdit = tePhoneNumber;
 
             if (textEdit.SelectedText != "")
                 textEdit.Text = textEdit.Text.Remove(textEdit.Text.Length - textEdit.SelectedText.Length, textEdit.Text.Length);
@@ -88,8 +137,31 @@ namespace UserForm
             TextEdit textEdit = teId;
             if (cursorFlag == 2)
                 textEdit = tePwd;
+            else if (cursorFlag == 3)
+                textEdit = tePwdCheck;
+            else if (cursorFlag == 4)
+                textEdit = teName;
+            else if (cursorFlag == 5)
+                textEdit = tePhoneNumber;
 
             textEdit.Text = textEdit.Text + btn.Text;
+            
+            if(cursorFlag==3)
+            {
+                checkPwd();
+            }
+        }
+
+        private void checkPwd()
+        {
+            if (tePwd.Text == tePwdCheck.Text)
+            {
+                labelPwd.Text = "";
+            }
+            else
+            {
+                labelPwd.Text = "비밀번호가 틀렸습니다";
+            }
         }
 
         private void ChangeKey(int selectNum)
@@ -185,6 +257,12 @@ namespace UserForm
                 cursorFlag = 1;
             else if (textEdit.Name == "tePwd")
                 cursorFlag = 2;
+            else if (textEdit.Name == "tePwdCheck")
+                cursorFlag = 3;
+            else if (textEdit.Name == "teName")
+                cursorFlag = 4;
+            else if (textEdit.Name == "tePhoneNumber")
+                cursorFlag = 5;
         }
 
         private void textEdit_DoubleClick(object sender, EventArgs e)
@@ -194,7 +272,47 @@ namespace UserForm
                 cursorFlag = 1;
             else if (textEdit.Name == "tePwd")
                 cursorFlag = 2;
+            else if (textEdit.Name == "tePwdCheck")
+                cursorFlag = 3;
+            else if (textEdit.Name == "teName")
+                cursorFlag = 4;
+            else if (textEdit.Name == "tePhoneNumber")
+                cursorFlag = 5;
             textEdit.SelectAll();
+        }
+
+        private void joinBtn_Click(object sender, EventArgs e)
+        {
+            if (teId.Text == "" || tePwd.Text==""||tePwdCheck.Text==""||teName.Text==""||tePhoneNumber.Text==""||cbVip.Text=="")
+            {
+                MessageBox.Show("비어있는 항목이 있습니다");
+                return;
+            }
+
+            checkId();
+            checkPwd();
+
+            var customerId = UserClient.CustomersClient.GetCustomersAsync().Result.ToList().Last();
+
+            Customer customer = new Customer
+            {
+                CustomerId = customerId.CustomerId + 1,
+                CustomerName = teName.Text,
+                CustomerPhone = tePhoneNumber.Text,
+                LoginId = teId.Text,
+                Password = tePwd.Text,
+                CustomerTypeId = cbVip.Text == "Yes" ? 1 : 2,
+                RegistrationDate = DateTime.Now
+            };
+
+            UserClient.CustomersClient.PostCustomerAsync(customer);
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            //Login login = new Login();
+            //login.Show();
+            //this.Close();
         }
     }
 }

@@ -250,3 +250,4 @@ C:\Users\kccistc\Desktop\FinalProject\FinalProject\User\UserAPI\UserForm\obj\Deb
 C:\Users\kccistc\Desktop\FinalProject\FinalProject\User\UserAPI\UserForm\obj\Debug\UserForm.Selection.resources
 C:\Users\kccistc\Desktop\FinalProject\FinalProject\User\UserAPI\UserForm\obj\Debug\UserForm.Release.resources
 C:\Users\kccistc\Desktop\FinalProject\FinalProject\User\UserAPI\UserForm\obj\Debug\UserForm.Login.resources
+C:\Users\kccistc\Desktop\FinalProject\FinalProject\User\UserAPI\UserForm\obj\Debug\UserForm.JoinUs.resources
