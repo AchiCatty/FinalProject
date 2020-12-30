@@ -16,7 +16,8 @@ namespace UserForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InputStorageForm(1));
+            //Application.Run(new InputStorageForm(1));
+            Application.Run(new Login());
         }
     }
 }
