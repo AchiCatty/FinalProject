@@ -16,6 +16,8 @@ namespace UserForm
     {
         int MemberId;
         int FacilityId;
+
+        List<int> purchaseItemsId = new List<int>();
         
         public Release(int memberId, int facilityId)
         {
@@ -84,7 +86,7 @@ namespace UserForm
             // DB 많아지면 오래걸릴듯
             var storage = UserClient.StoragesClient.GetStoragesAsync().Result;
             var purchase = from x in UserClient.PurchasesClient.GetPurchasesAsync().Result
-                           where x.CustomerId == 1
+                           where x.CustomerId == MemberId
                            select x;
             var check = purchase.ToList();
             var purcahaseItems = UserClient.PurchaseItemsClient.GetPurchaseItemsAsync().Result;
@@ -92,12 +94,13 @@ namespace UserForm
             var storageList = from x in storage
                               where x.FacilityId == facilityId
                               join y in purcahaseItems on x.StorageId equals y.StorageId
-                              where y.PurchaseId == check.Last().PurchaseId && (DateTime.Now-y.InTime).Hours<24
+                              where (y.PurchaseId == check.Last().PurchaseId) && ((DateTime.Now-y.InTime).Hours<24)
                               select new
                               {
                                   x.StorageId,
-                                  y.PurchaseId
+                                  y.PurchaseItemId
                               };
+
 
             foreach (var item in storageList)
             {
@@ -106,6 +109,7 @@ namespace UserForm
                     if (label.Text == item.StorageId.ToString())
                     {
                         label.BackColor = Color.White;
+                        purchaseItemsId.Add(item.PurchaseItemId);
                     }
                 }
             }
@@ -142,8 +146,13 @@ namespace UserForm
             }
 
             // 고객 아이디와 보관함번호 맞춰서 linq로 찾고 put(update) outTime
-            
-            
+            foreach (var item in purchaseItemsId)
+            {
+                var oldData = UserClient.PurchaseItemsClient.GetPurchaseItemAsync(item).Result;
+                oldData.OutTime = DateTime.Now;
+                UserClient.PurchaseItemsClient.PutPurchaseItemAsync(item, oldData);
+            }
+
         }
 
 

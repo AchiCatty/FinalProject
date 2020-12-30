@@ -292,7 +292,7 @@ namespace UserForm
             checkId();
             checkPwd();
 
-            if (labelPwd != null)
+            if (labelPwd.Text == "비밀번호가 틀렸습니다")
             {
                 MessageBox.Show("비밀번호를 확인해주세요");
                 return;
