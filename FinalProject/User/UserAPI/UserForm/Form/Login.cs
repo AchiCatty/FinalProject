@@ -62,7 +62,6 @@ namespace UserForm
             }
         }
 
-
         private void LoginBtn(object sender, EventArgs e)
         {
             var customerList = UserClient.CustomersClient.GetCustomersAsync().Result;
@@ -91,7 +90,7 @@ namespace UserForm
             if(CheckId ==1 && CheckPwd ==1)
             {
                 MessageBox.Show("로그인 성공");
-
+                
                 Selection form = new Selection(memberId, facilityId);
                 form.Show();
             }

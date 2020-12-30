@@ -18,6 +18,8 @@ namespace UserForm
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new InputStorageForm(1));
             Application.Run(new Login());
+
+            
         }
     }
 }
