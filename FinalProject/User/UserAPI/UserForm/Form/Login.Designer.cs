@@ -113,7 +113,7 @@ namespace UserForm
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
+            this.layoutControl1.Size = new System.Drawing.Size(838, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -134,7 +134,7 @@ namespace UserForm
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 334);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(814, 334);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // tableLayoutPanel5
@@ -154,28 +154,29 @@ namespace UserForm
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(770, 98);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(808, 98);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // button32
             // 
             this.button32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button32.Location = new System.Drawing.Point(480, 4);
+            this.button32.Location = new System.Drawing.Point(504, 4);
             this.button32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(111, 90);
+            this.button32.Size = new System.Drawing.Size(117, 90);
             this.button32.TabIndex = 4;
             this.button32.Tag = "1";
             this.button32.Text = "한/영";
             this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button31
             // 
             this.button31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button31.Location = new System.Drawing.Point(597, 4);
+            this.button31.Location = new System.Drawing.Point(627, 4);
             this.button31.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(170, 90);
+            this.button31.Size = new System.Drawing.Size(178, 90);
             this.button31.TabIndex = 3;
             this.button31.Tag = "1";
             this.button31.Text = "완료";
@@ -188,19 +189,20 @@ namespace UserForm
             this.button30.Location = new System.Drawing.Point(3, 4);
             this.button30.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(119, 90);
+            this.button30.Size = new System.Drawing.Size(125, 90);
             this.button30.TabIndex = 2;
             this.button30.Tag = "1";
             this.button30.Text = "?123";
             this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button29
             // 
             this.button29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button29.Location = new System.Drawing.Point(128, 4);
+            this.button29.Location = new System.Drawing.Point(134, 4);
             this.button29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(346, 90);
+            this.button29.Size = new System.Drawing.Size(364, 90);
             this.button29.TabIndex = 1;
             this.button29.Tag = "1";
             this.button29.UseVisualStyleBackColor = true;
@@ -233,75 +235,86 @@ namespace UserForm
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(770, 68);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(808, 68);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // button28
             // 
             this.button28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button28.Location = new System.Drawing.Point(513, 4);
+            this.button28.Location = new System.Drawing.Point(537, 4);
             this.button28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(79, 60);
+            this.button28.Size = new System.Drawing.Size(83, 60);
             this.button28.TabIndex = 9;
+            this.button28.Tag = "26";
             this.button28.Text = "N";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button27
             // 
             this.button27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button27.Location = new System.Drawing.Point(428, 4);
+            this.button27.Location = new System.Drawing.Point(448, 4);
             this.button27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(79, 60);
+            this.button27.Size = new System.Drawing.Size(83, 60);
             this.button27.TabIndex = 8;
+            this.button27.Tag = "25";
             this.button27.Text = "B";
             this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button26
             // 
             this.button26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button26.Location = new System.Drawing.Point(683, 4);
+            this.button26.Location = new System.Drawing.Point(715, 4);
             this.button26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(84, 60);
+            this.button26.Size = new System.Drawing.Size(90, 60);
             this.button26.TabIndex = 7;
             this.button26.Tag = "1";
-            this.button26.Text = "back\r\nspace";
+            this.button26.Text = "backspace";
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button25
             // 
             this.button25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button25.Location = new System.Drawing.Point(598, 4);
+            this.button25.Location = new System.Drawing.Point(626, 4);
             this.button25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(79, 60);
+            this.button25.Size = new System.Drawing.Size(83, 60);
             this.button25.TabIndex = 6;
+            this.button25.Tag = "27";
             this.button25.Text = "M";
             this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button24
             // 
             this.button24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button24.Location = new System.Drawing.Point(343, 4);
+            this.button24.Location = new System.Drawing.Point(359, 4);
             this.button24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(79, 60);
+            this.button24.Size = new System.Drawing.Size(83, 60);
             this.button24.TabIndex = 5;
+            this.button24.Tag = "24";
             this.button24.Text = "V";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button23
             // 
             this.button23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button23.Location = new System.Drawing.Point(88, 4);
+            this.button23.Location = new System.Drawing.Point(92, 4);
             this.button23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(79, 60);
+            this.button23.Size = new System.Drawing.Size(83, 60);
             this.button23.TabIndex = 4;
+            this.button23.Tag = "21";
             this.button23.Text = "Z";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button22
             // 
@@ -309,7 +322,7 @@ namespace UserForm
             this.button22.Location = new System.Drawing.Point(3, 4);
             this.button22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(79, 60);
+            this.button22.Size = new System.Drawing.Size(83, 60);
             this.button22.TabIndex = 3;
             this.button22.Tag = "1";
             this.button22.Text = "CLock";
@@ -319,24 +332,28 @@ namespace UserForm
             // button21
             // 
             this.button21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button21.Location = new System.Drawing.Point(258, 4);
+            this.button21.Location = new System.Drawing.Point(270, 4);
             this.button21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(79, 60);
+            this.button21.Size = new System.Drawing.Size(83, 60);
             this.button21.TabIndex = 2;
+            this.button21.Tag = "23";
             this.button21.Text = "C";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button20
             // 
             this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button20.Location = new System.Drawing.Point(173, 4);
+            this.button20.Location = new System.Drawing.Point(181, 4);
             this.button20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(79, 60);
+            this.button20.Size = new System.Drawing.Size(83, 60);
             this.button20.TabIndex = 1;
+            this.button20.Tag = "22";
             this.button20.Text = "X";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // tableLayoutPanel3
             // 
@@ -367,107 +384,125 @@ namespace UserForm
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(770, 68);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(808, 68);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // button19
             // 
             this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button19.Location = new System.Drawing.Point(505, 4);
+            this.button19.Location = new System.Drawing.Point(530, 4);
             this.button19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(73, 60);
+            this.button19.Size = new System.Drawing.Size(77, 60);
             this.button19.TabIndex = 9;
+            this.button19.Tag = "18";
             this.button19.Text = "J";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button18
             // 
             this.button18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button18.Location = new System.Drawing.Point(426, 4);
+            this.button18.Location = new System.Drawing.Point(447, 4);
             this.button18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(73, 60);
+            this.button18.Size = new System.Drawing.Size(77, 60);
             this.button18.TabIndex = 8;
+            this.button18.Tag = "17";
             this.button18.Text = "H";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button17
             // 
             this.button17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button17.Location = new System.Drawing.Point(663, 4);
+            this.button17.Location = new System.Drawing.Point(696, 4);
             this.button17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(73, 60);
+            this.button17.Size = new System.Drawing.Size(77, 60);
             this.button17.TabIndex = 7;
+            this.button17.Tag = "20";
             this.button17.Text = "L";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button16
             // 
             this.button16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button16.Location = new System.Drawing.Point(584, 4);
+            this.button16.Location = new System.Drawing.Point(613, 4);
             this.button16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(73, 60);
+            this.button16.Size = new System.Drawing.Size(77, 60);
             this.button16.TabIndex = 6;
+            this.button16.Tag = "19";
             this.button16.Text = "K";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button15
             // 
             this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button15.Location = new System.Drawing.Point(347, 4);
+            this.button15.Location = new System.Drawing.Point(364, 4);
             this.button15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(73, 60);
+            this.button15.Size = new System.Drawing.Size(77, 60);
             this.button15.TabIndex = 5;
+            this.button15.Tag = "16";
             this.button15.Text = "G";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button14
             // 
             this.button14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button14.Location = new System.Drawing.Point(110, 4);
+            this.button14.Location = new System.Drawing.Point(115, 4);
             this.button14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(73, 60);
+            this.button14.Size = new System.Drawing.Size(77, 60);
             this.button14.TabIndex = 4;
+            this.button14.Tag = "13";
             this.button14.Text = "S";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button13
             // 
             this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button13.Location = new System.Drawing.Point(31, 4);
+            this.button13.Location = new System.Drawing.Point(32, 4);
             this.button13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(73, 60);
+            this.button13.Size = new System.Drawing.Size(77, 60);
             this.button13.TabIndex = 3;
+            this.button13.Tag = "12";
             this.button13.Text = "A";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button12
             // 
             this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button12.Location = new System.Drawing.Point(268, 4);
+            this.button12.Location = new System.Drawing.Point(281, 4);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(73, 60);
+            this.button12.Size = new System.Drawing.Size(77, 60);
             this.button12.TabIndex = 2;
+            this.button12.Tag = "15";
             this.button12.Text = "F";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button11
             // 
             this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button11.Location = new System.Drawing.Point(189, 4);
+            this.button11.Location = new System.Drawing.Point(198, 4);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(73, 60);
+            this.button11.Size = new System.Drawing.Size(77, 60);
             this.button11.TabIndex = 1;
+            this.button11.Tag = "14";
             this.button11.Text = "D";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // tableLayoutPanel2
             // 
@@ -499,116 +534,134 @@ namespace UserForm
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(770, 68);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(808, 68);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // button10
             // 
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.Location = new System.Drawing.Point(696, 4);
+            this.button10.Location = new System.Drawing.Point(723, 4);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(71, 60);
+            this.button10.Size = new System.Drawing.Size(82, 60);
             this.button10.TabIndex = 9;
             this.button10.TabStop = false;
+            this.button10.Tag = "11";
             this.button10.Text = "P";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button9
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.Location = new System.Drawing.Point(619, 4);
+            this.button9.Location = new System.Drawing.Point(643, 4);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(71, 60);
+            this.button9.Size = new System.Drawing.Size(74, 60);
             this.button9.TabIndex = 8;
             this.button9.TabStop = false;
+            this.button9.Tag = "10";
             this.button9.Text = "O";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button8
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.Location = new System.Drawing.Point(542, 4);
+            this.button8.Location = new System.Drawing.Point(563, 4);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(71, 60);
+            this.button8.Size = new System.Drawing.Size(74, 60);
             this.button8.TabIndex = 7;
             this.button8.TabStop = false;
+            this.button8.Tag = "9";
             this.button8.Text = "I";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.Location = new System.Drawing.Point(465, 4);
+            this.button7.Location = new System.Drawing.Point(483, 4);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(71, 60);
+            this.button7.Size = new System.Drawing.Size(74, 60);
             this.button7.TabIndex = 6;
             this.button7.TabStop = false;
+            this.button7.Tag = "8";
             this.button7.Text = "U";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Location = new System.Drawing.Point(388, 4);
+            this.button6.Location = new System.Drawing.Point(403, 4);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(71, 60);
+            this.button6.Size = new System.Drawing.Size(74, 60);
             this.button6.TabIndex = 5;
             this.button6.TabStop = false;
+            this.button6.Tag = "7";
             this.button6.Text = "Y";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(311, 4);
+            this.button5.Location = new System.Drawing.Point(323, 4);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 60);
+            this.button5.Size = new System.Drawing.Size(74, 60);
             this.button5.TabIndex = 4;
             this.button5.TabStop = false;
+            this.button5.Tag = "6";
             this.button5.Text = "T";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(234, 4);
+            this.button4.Location = new System.Drawing.Point(243, 4);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(71, 60);
+            this.button4.Size = new System.Drawing.Size(74, 60);
             this.button4.TabIndex = 3;
             this.button4.TabStop = false;
+            this.button4.Tag = "5";
             this.button4.Text = "R";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(157, 4);
+            this.button3.Location = new System.Drawing.Point(163, 4);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 60);
+            this.button3.Size = new System.Drawing.Size(74, 60);
             this.button3.TabIndex = 2;
             this.button3.TabStop = false;
+            this.button3.Tag = "4";
             this.button3.Text = "E";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(80, 4);
+            this.button2.Location = new System.Drawing.Point(83, 4);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 60);
+            this.button2.Size = new System.Drawing.Size(74, 60);
             this.button2.TabIndex = 1;
             this.button2.TabStop = false;
+            this.button2.Tag = "3";
             this.button2.Text = "W";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // button1
             // 
@@ -616,18 +669,20 @@ namespace UserForm
             this.button1.Location = new System.Drawing.Point(3, 4);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 60);
+            this.button1.Size = new System.Drawing.Size(74, 60);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
+            this.button1.Tag = "2";
             this.button1.Text = "Q";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ClickKeyboard);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(597, 43);
+            this.simpleButton2.Location = new System.Drawing.Point(625, 43);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(191, 27);
+            this.simpleButton2.Size = new System.Drawing.Size(201, 27);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Tag = "1";
@@ -635,10 +690,10 @@ namespace UserForm
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(597, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(625, 12);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(191, 27);
+            this.simpleButton1.Size = new System.Drawing.Size(201, 27);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Tag = "1";
@@ -650,18 +705,22 @@ namespace UserForm
             this.tePwd.Location = new System.Drawing.Point(56, 43);
             this.tePwd.Margin = new System.Windows.Forms.Padding(4);
             this.tePwd.Name = "tePwd";
-            this.tePwd.Size = new System.Drawing.Size(342, 24);
+            this.tePwd.Size = new System.Drawing.Size(361, 24);
             this.tePwd.StyleController = this.layoutControl1;
             this.tePwd.TabIndex = 5;
+            this.tePwd.Click += new System.EventHandler(this.textEdit_Click);
+            this.tePwd.DoubleClick += new System.EventHandler(this.textEdit_DoubleClick);
             // 
             // teId
             // 
             this.teId.Location = new System.Drawing.Point(56, 12);
             this.teId.Margin = new System.Windows.Forms.Padding(4);
             this.teId.Name = "teId";
-            this.teId.Size = new System.Drawing.Size(342, 24);
+            this.teId.Size = new System.Drawing.Size(361, 24);
             this.teId.StyleController = this.layoutControl1;
             this.teId.TabIndex = 4;
+            this.teId.Click += new System.EventHandler(this.textEdit_Click);
+            this.teId.DoubleClick += new System.EventHandler(this.textEdit_DoubleClick);
             // 
             // Root
             // 
@@ -678,15 +737,15 @@ namespace UserForm
             this.layoutControlItem5,
             this.emptySpaceItem4});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 450);
+            this.Root.Size = new System.Drawing.Size(838, 450);
             this.Root.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(390, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(409, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(195, 31);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(204, 31);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -695,7 +754,7 @@ namespace UserForm
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(202, 28);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(390, 31);
+            this.layoutControlItem1.Size = new System.Drawing.Size(409, 31);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "ID";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(32, 18);
@@ -706,7 +765,7 @@ namespace UserForm
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 31);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(202, 28);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(390, 31);
+            this.layoutControlItem2.Size = new System.Drawing.Size(409, 31);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "PWD";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(32, 18);
@@ -716,32 +775,32 @@ namespace UserForm
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 62);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(780, 16);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(818, 16);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(390, 31);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(409, 31);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(195, 31);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(204, 31);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButton1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(585, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(613, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(195, 31);
+            this.layoutControlItem3.Size = new System.Drawing.Size(205, 31);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.simpleButton2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(585, 31);
+            this.layoutControlItem4.Location = new System.Drawing.Point(613, 31);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(195, 31);
+            this.layoutControlItem4.Size = new System.Drawing.Size(205, 31);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -750,7 +809,7 @@ namespace UserForm
             this.layoutControlItem5.Control = this.tableLayoutPanel1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 78);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(780, 338);
+            this.layoutControlItem5.Size = new System.Drawing.Size(818, 338);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -759,14 +818,14 @@ namespace UserForm
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 416);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(780, 14);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(818, 14);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(838, 450);
             this.Controls.Add(this.layoutControl1);
             this.Name = "Login";
             this.Text = "Login";

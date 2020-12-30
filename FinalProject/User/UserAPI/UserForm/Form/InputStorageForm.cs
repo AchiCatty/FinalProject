@@ -18,19 +18,21 @@ namespace UserForm
     public partial class InputStorageForm : XtraForm
     {
         private int MemberID;
+        int FacilityId;
 
-        public InputStorageForm(int memberID)
+        public InputStorageForm(int memberID, int facilityId)
         {
             InitializeComponent();
             MemberID = memberID;
+            FacilityId = facilityId;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             CreateLabelList();
-            CheckBoxType(15);
-            CheckRedBox(15);
+            CheckBoxType(FacilityId);
+            CheckRedBox(FacilityId);
         }
 
         private void CheckBoxType(int facilityId)

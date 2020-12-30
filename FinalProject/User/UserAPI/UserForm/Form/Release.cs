@@ -15,19 +15,20 @@ namespace UserForm
     public partial class Release : Form
     {
         int MemberId;
-        int FacilityNum = 15;
-        public Release(int memberId)
+        int FacilityId;
+        public Release(int memberId, int facilityId)
         {
             InitializeComponent();
             MemberId = memberId;
+            FacilityId = facilityId;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             CreateLabelList();
-            ConvertRedBox(FacilityNum);
-            CheckCustomerBox(FacilityNum);
+            ConvertRedBox(FacilityId);
+            CheckCustomerBox(FacilityId);
         }
 
         private void ConvertRedBox(int facilityId)
