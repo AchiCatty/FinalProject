@@ -283,7 +283,7 @@ namespace UserForm
 
         private void joinBtn_Click(object sender, EventArgs e)
         {
-            if (teId.Text == null || tePwd==null||tePwdCheck==null||teName==null||tePhoneNumber==null||cbVip.Text==null)
+            if (teId.Text == "" || tePwd.Text==""||tePwdCheck.Text==""||teName.Text==""||tePhoneNumber.Text==""||cbVip.Text=="")
             {
                 MessageBox.Show("비어있는 항목이 있습니다");
                 return;
@@ -306,15 +306,13 @@ namespace UserForm
             };
 
             UserClient.CustomersClient.PostCustomerAsync(customer);
-
-            this.Close();
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
             //Login login = new Login();
             //login.Show();
-            this.Close();
+            //this.Close();
         }
     }
 }

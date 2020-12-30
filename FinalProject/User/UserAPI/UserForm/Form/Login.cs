@@ -265,7 +265,6 @@ namespace UserForm
 
         private void join_Click(object sender, EventArgs e)
         {
-            Close();
             JoinUs form = new JoinUs();
             form.Show();
         }
