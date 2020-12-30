@@ -92,9 +92,10 @@ namespace UserForm
                 purchaseAmount += Convert.ToInt32(gridView1.GetRowCellValue(i, "Amount"));
             }
 
-            for (int i = 0; i < purchaseItems.Count; i++)
+            foreach (var item in purchaseItems)
             {
-                UserClient.PurchaseItemsClient.PostPurchaseItemAsync(purchaseItems[i]);
+                MessageBox.Show(item.ToString());
+                UserClient.PurchaseItemsClient.PostPurchaseItemAsync(item);
             }
 
             Purchase purchase = new Purchase();
