@@ -16,6 +16,7 @@ namespace UserForm
     {
         int MemberId;
         int FacilityId;
+        
         public Release(int memberId, int facilityId)
         {
             InitializeComponent();
@@ -95,6 +96,7 @@ namespace UserForm
                               select new
                               {
                                   x.StorageId,
+                                  y.PurchaseId
                               };
 
             foreach (var item in storageList)
@@ -140,6 +142,7 @@ namespace UserForm
             }
 
             // 고객 아이디와 보관함번호 맞춰서 linq로 찾고 put(update) outTime
+            
             
         }
 

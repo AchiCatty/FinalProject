@@ -292,6 +292,13 @@ namespace UserForm
             checkId();
             checkPwd();
 
+            if (labelPwd != null)
+            {
+                MessageBox.Show("비밀번호를 확인해주세요");
+                return;
+            }
+                
+
             var customerId = UserClient.CustomersClient.GetCustomersAsync().Result.ToList().Last();
 
             Customer customer = new Customer
