@@ -1,6 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using MyNamespace;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserForm.Client;
 
-
 namespace UserForm
 {
-    public partial class InputStorageForm : XtraForm
+    public partial class Release : Form
     {
-        private int MemberID;
+        int MemberId;
         int FacilityId;
-
-        public InputStorageForm(int memberID, int facilityId)
+        public Release(int memberId, int facilityId)
         {
             InitializeComponent();
-            MemberID = memberID;
+            MemberId = memberId;
             FacilityId = facilityId;
         }
 
@@ -31,11 +27,11 @@ namespace UserForm
         {
             base.OnLoad(e);
             CreateLabelList();
-            CheckBoxType(FacilityId);
-            CheckRedBox(FacilityId);
+            ConvertRedBox(FacilityId);
+            CheckCustomerBox(FacilityId);
         }
 
-        private void CheckBoxType(int facilityId)
+        private void ConvertRedBox(int facilityId)
         {
             var storage = UserClient.StoragesClient.GetStoragesAsync().Result;
             var fare = UserClient.FaresClient.GetFaresAsync().Result;
@@ -53,13 +49,9 @@ namespace UserForm
             {
                 foreach (var storageItem in storageList)
                 {
-                    if (item.Text == Convert.ToString(storageItem.StorageId))
-                    {
-                        if (storageItem.StorageTypeId == 1)
-                        {
-                            item.BackColor = Color.Gray;
-                        }
-                    }
+                    
+                     item.BackColor = Color.Red;
+                    
                 }
 
             }
@@ -67,7 +59,7 @@ namespace UserForm
 
         // 사용하는 리스트
         private List<Label> _labels = new List<Label>();
-        
+
         // CreateLabelList - _labels를 만들기 위해 reflection 하는 메서드
         private void CreateLabelList()
         {
@@ -86,29 +78,34 @@ namespace UserForm
         }
 
         // CheckRedBox - 사용중인 박스 찾아서 Red로 표현해주는 메서드
-        private void CheckRedBox(int facilityId)
+        private void CheckCustomerBox(int facilityId)
         {
+            // DB 많아지면 오래걸릴듯
             var storage = UserClient.StoragesClient.GetStoragesAsync().Result;
+            var purchase = from x in UserClient.PurchasesClient.GetPurchasesAsync().Result
+                           where x.CustomerId == 1
+                           select x;
+            var check = purchase.ToList();
             var purcahaseItems = UserClient.PurchaseItemsClient.GetPurchaseItemsAsync().Result;
 
-            var storageList = from x in storage where x.FacilityId == facilityId
-                       join y in purcahaseItems on x.StorageId equals y.StorageId
-                       select new 
-                       {
-                            x.StorageId,
-                            type = y.OutTime>=DateTime.Now?1:2
-                       };
+            var storageList = from x in storage
+                              where x.FacilityId == facilityId
+                              join y in purcahaseItems on x.StorageId equals y.StorageId
+                              where y.PurchaseId == check.Last().PurchaseId && (DateTime.Now-y.InTime).Hours<24
+                              select new
+                              {
+                                  x.StorageId,
+                              };
 
             foreach (var item in storageList)
             {
                 foreach (var label in _labels)
                 {
-                    if (item.type == 1 && label.Text == Convert.ToString(item.StorageId))
+                    if (label.Text == item.StorageId.ToString())
                     {
-                        label.BackColor = Color.Red;
+                        label.BackColor = Color.White;
                     }
                 }
-                
             }
         }
 
@@ -123,41 +120,30 @@ namespace UserForm
                 labelBox.BackColor = Color.Yellow;
                 labelBox.Tag = 1;
             }
-            else if(labelBox.BackColor == Color.Gray)
-            {
-                labelBox.BackColor = Color.Yellow;
-                labelBox.Tag = 2;
-            }
             // 노란건 이미 선택된거기 때문에 다시 하얀색으로
             else if (labelBox.BackColor == Color.Yellow)
             {
-                if (Convert.ToInt32(labelBox.Tag) == 1)
-                {
-                    labelBox.BackColor = Color.White;
-                }
-                else if (Convert.ToInt32(labelBox.Tag) == 2)
-                {
-                    labelBox.BackColor = Color.Gray;
-                }
+                labelBox.BackColor = Color.White;
             }
         }
 
-        // PayBtnClick - 버튼 누르면 결제창르로 이동
-        public void PayBtnClick(object sender, EventArgs e)
+        List<int> storageNumList = new List<int>();
+
+        private void ReleaseBtn(object sender, EventArgs e)
         {
-            List<int> storageList = new List<int>();
             foreach (var item in _labels)
             {
-                if (item.BackColor == Color.Yellow)
+                if(item.BackColor == Color.Yellow)
                 {
-                    storageList.Add(Convert.ToInt32(item.Text));
+                    storageNumList.Add(Convert.ToInt32(item.Text));
                 }
             }
-            
-            Payment payment = new Payment(MemberID, storageList);
-            payment.Show();
+
+            // 고객 아이디와 보관함번호 맞춰서 linq로 찾고 put(update) outTime
             
         }
+
+
 
         // ExitBtn - 처음으로 버튼
         //private void ExitBtn(object sender, EventArgs e)

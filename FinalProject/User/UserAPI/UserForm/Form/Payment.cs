@@ -45,8 +45,8 @@ namespace UserForm
                 GridItem gridList = new GridItem();
                 gridList.StorageId = item;
                 gridList.InTime = DateTime.Now;
-                gridList.OutTime = gridList.InTime;
-                gridList.Amount = 0;
+                gridList.OutTime = gridList.InTime.AddHours(6);
+                gridList.Amount = 6000;
 
                 gridLists.Add(gridList);
             }
